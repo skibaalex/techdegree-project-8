@@ -3,6 +3,7 @@ body {
   font: 18px "Garamond", serif;
 }
 
+
 a {
   color: #019875;
   text-decoration: none;
@@ -94,4 +95,12 @@ input[type=text] {
 
 .error {
   color: rgb(236, 15, 15);
+}
+
+.pagination{
+  margin-top: 25px;
+}
+
+.pagination > * {
+  margin: 30px
 }

@@ -1,0 +1,28 @@
+extends layout
+block content
+  div
+    h1 Welcome
+    include search
+    p
+      a.button(href='/books/new') Create New Book
+    table
+      thead
+        tr
+          th Title
+          th Author
+          th Genre
+          th Year
+      tbody
+
+      each book in books
+        tr
+          td
+            a(href=`/books/${book.id}`)= book.title
+          td= book.author
+          td= book.genre
+          td= book.year
+        tr
+    if pages > 1
+      .pagination 
+        a(class="button" href=`/books/search?${term ? 'searchTerm=' + term + '&' : ''}page=${page ? page -= 1 : 1}`) Prev
+        a(class="button" href=`/books/search?${term ? 'searchTerm=' + term + '&' : ''}page=${page ? page += 1 : 2}`) Next
